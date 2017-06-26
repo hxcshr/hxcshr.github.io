@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/26/ios-kvc-kvo/">ios kvc kvo</a>
+      <a class="article-title" href="/2017/06/26/ios-kvc-kvo/">iOS KVC 原理与总结</a>
     </h1>
   
 
@@ -83,11 +83,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>#KVC 原理与总结</p>
+<p>KVC 就是key value coding<br>就是用不明确方法对属性进行 存取操作</p>
+<p>总体规则 先找相关方法，再找相关变量；具体规则如下：<br>   1.先找相关方法，如果相关方法找不到<br>   2.那么去判断accessInstanceVariablesDirectly (该方法默认返回YES) 是否返回YES<br>   3.如果返回YES，继续再去找相关变量<br>   4.如果没有找到,就会执行KVC的valueForUndefinedKey,程序崩溃<br>   5.如果返回NO，就会直接执行valueForUndefinedKey</p>
+<p>相关方法 get<key>,<key>;set<key>,setIs<key>  容器方法 数组的 countOf<key> objectIn<key>AtIndex (NSSet)<br>相关变量 _<key>(默认生成的),_is<key>,key,isKey</key></key></key></key></key></key></key></key></p>
+<p>valueForKey 放回是 id类型, 拥有自动装箱的功能,比如属性是int 类型,valueForKey得到的就是NSNumber类型<br>setValue:ForKey 也会开箱操作</p>
+<p>使用kvc,为了增强程序的健壮性,可以重写setValueForUndefinedKey,防止程序崩溃<br>可以通过kvc访问私有属性,如果不想让外界访问私有属性可以重写那么去判断accessInstanceVariablesDirectly,返回NO就可以了</p>
+<p>数组的count不能用 [array valueForKey:@”count”] ,会直接崩溃掉，可以使用[array valueForKey:@”@count”],这是数组的隐藏方法，类似的还有@max，@min，@sum；如果是keyPath的话，是[array valueFroKeyPath:@max.key]这样写。</p>
+<p>runtime kvc</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/26/ios-kvc-kvo/" data-id="cj4e68xbq0001okfy31w3kj3x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/26/ios-kvc-kvo/" data-id="cj4e856v00001qvfyobd55ge9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/28/hello-world/" data-id="cj4e68xbl0000okfyqh24bie2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/28/hello-world/" data-id="cj4e856uu0000qvfyzorco4z2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +180,7 @@
       <ul>
         
           <li>
-            <a href="/2017/06/26/ios-kvc-kvo/">ios kvc kvo</a>
+            <a href="/2017/06/26/ios-kvc-kvo/">iOS KVC 原理与总结</a>
           </li>
         
           <li>
