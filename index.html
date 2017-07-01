@@ -90,12 +90,13 @@
 <p>valueForKey 放回是 id类型, 拥有自动装箱的功能,比如属性是int 类型,valueForKey得到的就是NSNumber类型<br>setValue:ForKey 也会开箱操作</p>
 <p>使用kvc,为了增强程序的健壮性,可以重写setValueForUndefinedKey,防止程序崩溃<br>可以通过kvc访问私有属性,如果不想让外界访问私有属性可以重写那么去判断accessInstanceVariablesDirectly,返回NO就可以了</p>
 <p>数组的count不能用 [array valueForKey:@”count”] ,会直接崩溃掉，可以使用[array valueForKey:@”@count”],这是数组的隐藏方法，类似的还有@max，@min，@sum；如果是keyPath的话，是[array valueFroKeyPath:@max.key]这样写。</p>
-<p>数组的valueForKey是对里边的每一个元素进行valueForKey，然后返回一个数组，如果元素没有，就会返回一个含有N个null的数组</p>
+<p>数组的valueForKey是对里边的每一个元素进行valueForKey，然后返回一个数组，如果数组中元素没有找到，就会返回一个含有N个null的数组</p>
+<p>可以在分类中重写valueForKey方法，使数组也支持[array valueforkey:@”0”]这种取值方法，和字典的取值配合使用，也是挺方便的</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/26/ios-kvc-kvo/" data-id="cj4e8o7mj0001rrfychztaf7i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/26/ios-kvc-kvo/" data-id="cj4lfvyhz000139fylu0t62ec" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/28/hello-world/" data-id="cj4e8o7md0000rrfyxv3akphs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/28/hello-world/" data-id="cj4lfvyhv000039fy6bvdh16s" class="article-share-link">Share</a>
       
       
     </footer>
