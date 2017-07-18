@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS KVV | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="键值验证 （KVV ，Key-Value Validate）KVV提供了键值验证机制，让开发者有机会能够挽回错误，保证数据的一致性。开发者需首先调用下边的方法1- (BOOL)validateValue:(inout id  _Nullable __autoreleasing *)ioValue forKey:(NSString *)inKey error:(out NSError * _Null">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS KVV">
+<meta property="og:url" content="http://yoursite.com/2017/07/18/iOS-KVV/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="键值验证 （KVV ，Key-Value Validate）KVV提供了键值验证机制，让开发者有机会能够挽回错误，保证数据的一致性。开发者需首先调用下边的方法1- (BOOL)validateValue:(inout id  _Nullable __autoreleasing *)ioValue forKey:(NSString *)inKey error:(out NSError * _Null">
+<meta property="og:updated_time" content="2017-07-18T14:30:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS KVV">
+<meta name="twitter:description" content="键值验证 （KVV ，Key-Value Validate）KVV提供了键值验证机制，让开发者有机会能够挽回错误，保证数据的一致性。开发者需首先调用下边的方法1- (BOOL)validateValue:(inout id  _Nullable __autoreleasing *)ioValue forKey:(NSString *)inKey error:(out NSError * _Null">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-iOS-KVV" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/18/iOS-KVV/" class="article-date">
+  <time datetime="2017-07-18T13:50:56.000Z" itemprop="datePublished">2017-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS KVV
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="键值验证-（KVV-，Key-Value-Validate）"><a href="#键值验证-（KVV-，Key-Value-Validate）" class="headerlink" title="键值验证 （KVV ，Key-Value Validate）"></a>键值验证 （KVV ，Key-Value Validate）</h2><p>KVV提供了键值验证机制，让开发者有机会能够挽回错误，保证数据的一致性。开发者需首先调用下边的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (BOOL)validateValue:(inout id  _Nullable __autoreleasing *)ioValue forKey:(NSString *)inKey error:(out NSError * _Nullable __autoreleasing *)outError</div></pre></td></tr></table></figure></p>
+<p>这个方法会默认调用如下的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (BOOL)validate&lt;Key&gt;:error:</div></pre></td></tr></table></figure></p>
+<h2 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (BOOL)validateName:(NSString **)name error:(NSError * __autoreleasing*)outError&#123;</div><div class="line">    NSString *nameString = *name;</div><div class="line">    if (nameString.length == 0) &#123;</div><div class="line">        *name = @&quot;zhangsan&quot;;</div><div class="line">        return NO;</div><div class="line">    &#125;</div><div class="line">    return YES;</div><div class="line">&#125;</div><div class="line"></div><div class="line">    _hhh = [Home new];</div><div class="line">    NSError *error = nil;</div><div class="line">    NSString *value = @&quot;&quot;;</div><div class="line">    if ([_hhh validateValue:&amp;value forKey:@&quot;name&quot; error:&amp;error]) &#123;</div><div class="line">        _hhh.name = value;</div><div class="line">    &#125;else&#123;</div><div class="line">        NSLog(@&quot;不符合要求&quot;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>这个简单的例子中没有对出参做任何处理，推荐的做法是：如果返回YES，则不改变出参name和outError；如果返回NO，则代表验证失败，应该在出参outError中指出失败的原因。[_hhh validateValue:&amp;value forKey:@”name” error:&amp;error]调用这个方法的默认实现是在类中搜索名称为- validate<key>:error:的验证方法。如果发现这样的方法，则该方法被调用并返回结果。如果没有找到则返回YES。<br>官方文档的描述如下：</key></p>
+<p>Given a pointer to a value pointer, a key that identifies an attribute or to-one relationship, and a pointer to an NSError pointer, return a value that is suitable for use in subsequent -setValue:forKey: messages sent to the same receiver. If no validation is necessary, return YES without altering <em>ioValue or </em>outError. If validation is necessary and possible, return YES after setting <em>ioValue to an object that is the validated version of the original value, but without altering </em>outError. If validation is necessary but not possible, return NO after setting <em>outError to an NSError that encapsulates the reason that validation was not possible, but without altering </em>ioValue. The sender of the message is never given responsibility for releasing ioValue or outError.</p>
+<p>The default implementation of this method searches the class of the receiver for a validator method whose name matches the pattern -validate<key>:error:. If such a method is found it is invoked and the result is returned. If no such method is found, YES is returned.</key></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/18/iOS-KVV/" data-id="cj59ofehq0001uvfytnodxi9y" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/01/KVO-原理与总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">KVO 原理与总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/18/iOS-KVV/">iOS KVV</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/01/KVO-原理与总结/">KVO 原理与总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/26/ios-kvc-kvo/">iOS KVC 原理与总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
