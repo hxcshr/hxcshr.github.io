@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Pch预编译 | hexuec</title>
+  <title>iOS 扩大button的点击区域 | hexuec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些整个项目或者多个模块都需要引入的文件，一遍一遍的import是不是很麻烦，一开始的时候新建一个.h文件去把这些通用的文件引进去，然后在统一引入这个头文件，但是还是要引入多遍这个头文件。可以新建一个prefix.pch去解决这个问题吧，可以新建一个”PrefixHeader.pch”文件，把公共的头文件都放到这里边，整个项目都能访问到了。在Build Settings中搜索prefix就可以看到">
+  <meta name="description" content="总有这样的需求，领导让扩大某个按钮的热区，通过研究响应者链，重写下边的方法实现扩大相应区域，其实在“骗”系统。
+#pragma mark - override super method-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{ //如果 button 边界值无变化 失效 隐藏 或者透明 直接返回 if(UIEdgeIn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pch预编译">
-<meta property="og:url" content="http://yoursite.com/2018/06/25/Pch预编译/index.html">
+<meta property="og:title" content="iOS 扩大button的点击区域">
+<meta property="og:url" content="http://yoursite.com/2017/12/07/iOS-扩大button的点击区域/index.html">
 <meta property="og:site_name" content="hexuec">
-<meta property="og:description" content="一些整个项目或者多个模块都需要引入的文件，一遍一遍的import是不是很麻烦，一开始的时候新建一个.h文件去把这些通用的文件引进去，然后在统一引入这个头文件，但是还是要引入多遍这个头文件。可以新建一个prefix.pch去解决这个问题吧，可以新建一个”PrefixHeader.pch”文件，把公共的头文件都放到这里边，整个项目都能访问到了。在Build Settings中搜索prefix就可以看到">
-<meta property="og:updated_time" content="2018-06-25T14:16:07.224Z">
+<meta property="og:description" content="总有这样的需求，领导让扩大某个按钮的热区，通过研究响应者链，重写下边的方法实现扩大相应区域，其实在“骗”系统。
+#pragma mark - override super method-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{ //如果 button 边界值无变化 失效 隐藏 或者透明 直接返回 if(UIEdgeIn">
+<meta property="og:updated_time" content="2018-08-21T14:14:14.619Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pch预编译">
-<meta name="twitter:description" content="一些整个项目或者多个模块都需要引入的文件，一遍一遍的import是不是很麻烦，一开始的时候新建一个.h文件去把这些通用的文件引进去，然后在统一引入这个头文件，但是还是要引入多遍这个头文件。可以新建一个prefix.pch去解决这个问题吧，可以新建一个”PrefixHeader.pch”文件，把公共的头文件都放到这里边，整个项目都能访问到了。在Build Settings中搜索prefix就可以看到">
+<meta name="twitter:title" content="iOS 扩大button的点击区域">
+<meta name="twitter:description" content="总有这样的需求，领导让扩大某个按钮的热区，通过研究响应者链，重写下边的方法实现扩大相应区域，其实在“骗”系统。
+#pragma mark - override super method-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{ //如果 button 边界值无变化 失效 隐藏 或者透明 直接返回 if(UIEdgeIn">
   
     <link rel="alternative" href="/atom.xml" title="hexuec" type="application/atom+xml">
   
@@ -153,27 +156,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Pch预编译" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-扩大button的点击区域" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Pch预编译
+      iOS 扩大button的点击区域
     </h1>
   
 
         
-        <a href="/2018/06/25/Pch预编译/" class="archive-article-date">
-  	<time datetime="2018-06-25T13:47:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
+        <a href="/2017/12/07/iOS-扩大button的点击区域/" class="archive-article-date">
+  	<time datetime="2017-12-07T13:09:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一些整个项目或者多个模块都需要引入的文件，一遍一遍的import是不是很麻烦，一开始的时候新建一个.h文件去把这些通用的文件引进去，然后在统一引入这个头文件，但是还是要引入多遍这个头文件。<br>可以新建一个prefix.pch去解决这个问题吧，可以新建一个”PrefixHeader.pch”文件，把公共的头文件都放到这里边，整个项目都能访问到了。在Build Settings中搜索prefix就可以看到，新建完之后，别忘了在Prefix Header中填写路径，还有一个Precompile Prefix Header，可以设置是否预编译这里的文件，打开这个开关，可以加快项目的编译速度。预编译是为了解决大项目编译速度过慢的问题，放到pch里的文件可以，如果不改动的话，编译器就不会再编译了，直接使用之前编译过得中间文件，我感觉IDE就是帮我们生成并运行makefile文件。</p>
+        <p>总有这样的需求，领导让扩大某个按钮的热区，通过研究响应者链，重写下边的方法实现扩大相应区域，其实在“骗”系统。</p>
+<p>#pragma mark - override super method<br>-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{ //如果 button 边界值无变化 失效 隐藏 或者透明 直接返回 if(UIEdgeInsetsEqualToEdgeInsets(self.hitEdgeInsets, UIEdgeInsetsZero) || !self.enabled || self.hidden || self.alpha == 0 ) { return [super pointInside:point withEvent:event]; }else{ CGRect relativeFrame = self.bounds; CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.hitEdgeInsets); return CGRectContainsPoint(hitFrame, point); } }</p>
+<p>链接：<a href="https://www.jianshu.com/p/239adf1fae79" target="_blank" rel="external">https://www.jianshu.com/p/239adf1fae79</a></p>
 
       
 
@@ -253,7 +258,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/25/Pch预编译/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/07/iOS-扩大button的点击区域/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -267,9 +272,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/06/25/Pch预编译/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Pch预编译
+        
+      </div>
+    </a>
   
-    <a href="/2017/12/07/iOS-扩大button的点击区域/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS 扩大button的点击区域</div>
+  
+    <a href="/2017/11/12/破窗理论/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">破窗理论</div>
       <i class="icon-circle-right"></i>
     </a>
   
