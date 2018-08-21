@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Pch预编译 | hexuec</title>
+  <title>模拟器模拟各种网络环境 | hexuec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些整个项目或者多个模块都需要引入的文件，一遍一遍的import是不是很麻烦，一开始的时候新建一个.h文件去把这些通用的文件引进去，然后在统一引入这个头文件，但是还是要引入多遍这个头文件。可以新建一个prefix.pch去解决这个问题吧，可以新建一个”PrefixHeader.pch”文件，把公共的头文件都放到这里边，整个项目都能访问到了。在Build Settings中搜索prefix就可以看到">
+  <meta name="description" content="转自：https://blog.csdn.net/u010828718/article/details/46986795
+真机的话在 设置-&amp;gt;开发者里边可以选择模拟器的话需要安装Hardware IO Tools for Xcode ，就可以模拟了，下载地址https://developer.apple.com/downloads/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pch预编译">
-<meta property="og:url" content="http://yoursite.com/2018/06/25/Pch预编译/index.html">
+<meta property="og:title" content="模拟器模拟各种网络环境">
+<meta property="og:url" content="http://yoursite.com/2017/10/26/模拟器模拟各种网络环境/index.html">
 <meta property="og:site_name" content="hexuec">
-<meta property="og:description" content="一些整个项目或者多个模块都需要引入的文件，一遍一遍的import是不是很麻烦，一开始的时候新建一个.h文件去把这些通用的文件引进去，然后在统一引入这个头文件，但是还是要引入多遍这个头文件。可以新建一个prefix.pch去解决这个问题吧，可以新建一个”PrefixHeader.pch”文件，把公共的头文件都放到这里边，整个项目都能访问到了。在Build Settings中搜索prefix就可以看到">
-<meta property="og:updated_time" content="2018-06-25T14:16:07.224Z">
+<meta property="og:description" content="转自：https://blog.csdn.net/u010828718/article/details/46986795
+真机的话在 设置-&amp;gt;开发者里边可以选择模拟器的话需要安装Hardware IO Tools for Xcode ，就可以模拟了，下载地址https://developer.apple.com/downloads/">
+<meta property="og:updated_time" content="2018-08-21T14:02:06.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pch预编译">
-<meta name="twitter:description" content="一些整个项目或者多个模块都需要引入的文件，一遍一遍的import是不是很麻烦，一开始的时候新建一个.h文件去把这些通用的文件引进去，然后在统一引入这个头文件，但是还是要引入多遍这个头文件。可以新建一个prefix.pch去解决这个问题吧，可以新建一个”PrefixHeader.pch”文件，把公共的头文件都放到这里边，整个项目都能访问到了。在Build Settings中搜索prefix就可以看到">
+<meta name="twitter:title" content="模拟器模拟各种网络环境">
+<meta name="twitter:description" content="转自：https://blog.csdn.net/u010828718/article/details/46986795
+真机的话在 设置-&amp;gt;开发者里边可以选择模拟器的话需要安装Hardware IO Tools for Xcode ，就可以模拟了，下载地址https://developer.apple.com/downloads/">
   
     <link rel="alternative" href="/atom.xml" title="hexuec" type="application/atom+xml">
   
@@ -153,27 +156,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Pch预编译" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-模拟器模拟各种网络环境" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Pch预编译
+      模拟器模拟各种网络环境
     </h1>
   
 
         
-        <a href="/2018/06/25/Pch预编译/" class="archive-article-date">
-  	<time datetime="2018-06-25T13:47:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
+        <a href="/2017/10/26/模拟器模拟各种网络环境/" class="archive-article-date">
+  	<time datetime="2017-10-26T11:00:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一些整个项目或者多个模块都需要引入的文件，一遍一遍的import是不是很麻烦，一开始的时候新建一个.h文件去把这些通用的文件引进去，然后在统一引入这个头文件，但是还是要引入多遍这个头文件。<br>可以新建一个prefix.pch去解决这个问题吧，可以新建一个”PrefixHeader.pch”文件，把公共的头文件都放到这里边，整个项目都能访问到了。在Build Settings中搜索prefix就可以看到，新建完之后，别忘了在Prefix Header中填写路径，还有一个Precompile Prefix Header，可以设置是否预编译这里的文件，打开这个开关，可以加快项目的编译速度。预编译是为了解决大项目编译速度过慢的问题，放到pch里的文件可以，如果不改动的话，编译器就不会再编译了，直接使用之前编译过得中间文件，我感觉IDE就是帮我们生成并运行makefile文件。</p>
+        <p>转自：<br><a href="https://blog.csdn.net/u010828718/article/details/46986795" target="_blank" rel="external">https://blog.csdn.net/u010828718/article/details/46986795</a></p>
+<p>真机的话在 设置-&gt;开发者里边可以选择<br>模拟器的话需要安装Hardware IO Tools for Xcode ，就可以模拟了，下载地址<br><a href="https://developer.apple.com/downloads/" target="_blank" rel="external">https://developer.apple.com/downloads/</a></p>
 
       
 
@@ -253,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/25/Pch预编译/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/10/26/模拟器模拟各种网络环境/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -267,9 +271,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/06/25/Pch预编译/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Pch预编译
+        
+      </div>
+    </a>
   
-    <a href="/2017/10/26/模拟器模拟各种网络环境/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">模拟器模拟各种网络环境</div>
+  
+    <a href="/2017/09/15/instanceType-和-id/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">instanceType 和 id</div>
       <i class="icon-circle-right"></i>
     </a>
   
