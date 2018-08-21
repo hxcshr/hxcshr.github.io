@@ -214,6 +214,70 @@
 
 
   
+    <article id="post-instanceType-和-id" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/15/instanceType-和-id/">instanceType 和 id</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/15/instanceType-和-id/" class="archive-article-date">
+  	<time datetime="2017-09-15T14:59:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>实例类型（Instancetype）是Objective-C语言中新添加的一个返回类型，实例类型作为方法返回的实例的类型，是苹果在2013年的年度大会上宣布的。这个新添加的实例类型不仅可用来作为Objective-C方法的返回类型，且能用这个实例类型来作为向编译器的提示，提示方法返回的类型将是方法所属的类的实例。<br>类的实例，作为方法返回类型，宜采用关键字instancetype作为方法的返回类型，如alloc、init和类工厂方法等。使用instancetype作为类（或者类的子类）的实例返回类型，可以大大改善Objective-C代码的类型安全。例如，考虑下面的代码：<br>@interface MyObject : NSObject + (instancetype)factoryMethodA; + (id)factoryMethodB; @end @implementation MyObject + (instancetype)factoryMethodA {return [[[self class] alloc] init]; } + (id)factoryMethodB { return [[[self class] alloc] init];} @end void doSomething() { NSUInteger x, y; // Return type of +factoryMethodA is taken to be “MyObject <em>“ x = [[MyObject factoryMethodA] count]; // Return type of +factoryMethodB is “id” y = [[MyObject factoryMethodB] count]; }<br>通过上面的代码可以看到，instancetype作为+factoryMethodA的返回类型，也就是说，该消息的类型表达式是MyObject</em>。但是MyObject由于先天缺乏一个-count方法，编译器将会对此给出一个关于x行的警告：<br>main.m: ‘MyObject’may not respond to’count’<br>对于这样的情况，如果把instancetype换成id作为实例的方法返回类型，也就是如上面的代码中的实例，id作为类方法+factoryMethodB的返回类型。在编译器编译的过程中不会发出关于y行的警告。<br>为什么编译器没有给出警告？因为id类型的对象可以作为任何类，并且调用的方法-count在一些类中存在，故此向编译器发出方法+factoryMethodB返回值实现了-count的信息，从而编译器没有给出警告。对于该种编写代码的方法，在无形中埋下了隐患。<br>为了确保instancetype工厂方法有正确的子类的行为，一定要使用[self class]分配类，而不是直接引用类名。遵循这个惯例，记住，务必要使编译器能正确地推断出子类类型。例如，依据前面的示例，考虑尝试做一个前面MyObject子类示例：<br>@interface MyObjectSubclass : MyObject @end void doSomethingElse() { NSString <em>aString = [MyObjectSubclass factoryMethodA]; }<br>对于上述代码，编译器将会给出警告，如下面的警告：<br>main.m: Incompatible pointer types initializing ‘NSString </em>‘with an expression of type ‘MyObjectSubclass *’<br>在该示例中，+factoryMethodA消息发送之后，将返回一个类型MyObjectSubclass的对象实例。编译器就能恰当地确定+factoryMethodA的返回类型应该是子类MyObjectSubclass，而不是工厂方法中所声明的超类。<br>在编写代码中，通常在处理init方法和类工厂方法时，宜用instancetype类替换id作为返回值。在新版本Xcode 5中，虽然，编译器会自动地把alloc、init、new方法之中的id转化为instancetype类型，但对于这几种方法之外的其他方法，编译器则不会进行转化。在Objective-C的公约之中，明确地建议对于所有方法尽可能用instancetype而非id。也就是说，作为返回值，id由于其自身的缺陷，在Objective-C中会逐渐退出，由instancetype来替代。</p>
+<p>注意 仅有在作为返回值时，宜用instancetype来替换id，而不是代替代码中所有id。与id不同，instancetype关键字仅能作为方法声明的返回类型。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/15/instanceType-和-id/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-判断版本的新方法-NSProcessInfo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
