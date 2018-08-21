@@ -6,18 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>字符编码，utf-8怎么拆分每个字符 | hexuec</title>
+  <title>Archives: 2017/8 | hexuec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、字符编码简介1. ASCII码在计算机内部，所有的信息最终都表示为一个二进制的字符串。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从0000000到11111111。上个世纪60年代，美国制定了一套字符编码，对英语字符与二进制位之">
-<meta property="og:type" content="article">
-<meta property="og:title" content="字符编码，utf-8怎么拆分每个字符">
-<meta property="og:url" content="http://yoursite.com/2017/07/30/字符编码，utf-8怎么拆分每个字符/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="hexuec">
+<meta property="og:url" content="http://yoursite.com/archives/2017/08/index.html">
 <meta property="og:site_name" content="hexuec">
-<meta property="og:description" content="一、字符编码简介1. ASCII码在计算机内部，所有的信息最终都表示为一个二进制的字符串。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从0000000到11111111。上个世纪60年代，美国制定了一套字符编码，对英语字符与二进制位之">
-<meta property="og:updated_time" content="2018-08-21T13:37:39.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字符编码，utf-8怎么拆分每个字符">
-<meta name="twitter:description" content="一、字符编码简介1. ASCII码在计算机内部，所有的信息最终都表示为一个二进制的字符串。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从0000000到11111111。上个世纪60年代，美国制定了一套字符编码，对英语字符与二进制位之">
+<meta name="twitter:title" content="hexuec">
   
     <link rel="alternative" href="/atom.xml" title="hexuec" type="application/atom+xml">
   
@@ -153,167 +149,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-字符编码，utf-8怎么拆分每个字符" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      字符编码，utf-8怎么拆分每个字符
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/08/21/判断版本的新方法-NSProcessInfo/" class="archive-article-date">
+  	<time datetime="2017-08-21T12:27:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/21/判断版本的新方法-NSProcessInfo/">判断版本的新方法 NSProcessInfo</a>
     </h1>
   
 
-        
-        <a href="/2017/07/30/字符编码，utf-8怎么拆分每个字符/" class="archive-article-date">
-  	<time datetime="2017-07-30T13:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、字符编码简介"><a href="#一、字符编码简介" class="headerlink" title="一、字符编码简介"></a>一、字符编码简介</h1><h2 id="1-ASCII码"><a href="#1-ASCII码" class="headerlink" title="1. ASCII码"></a>1. ASCII码</h2><p>在计算机内部，所有的信息最终都表示为一个二进制的字符串。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从0000000到11111111。<br>上个世纪60年代，美国制定了一套字符编码，对英语字符与二进制位之间的关系，做了统一规定。这被称为ASCII码，一直沿用至今。<br>ASCII码一共规定了128个字符的编码，比如空格“SPACE”是32（二进制00100000），大写的字母A是65（二进制01000001）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后面7位，最前面的1位统一规定为0。</p>
-<h2 id="2-Unicode"><a href="#2-Unicode" class="headerlink" title="2. Unicode"></a>2. Unicode</h2><p>英语用128个符号编码就够了，但是用来表示其他语言，128个符号是不够的。因此，很多欧洲国家发明了很多非ASCII码，同样用一个字节，用最高位为1的区间（既128~255）来扩展原来的ASCII码，其中一种比较有名的就是IBM字符编码。这样一来，这些欧洲国家使用的编码体系，可以表示最多256个符号。但是，这里又出现了新的问题。不同的国家有不同的字母，因此，哪怕它们都使用256个符号的编码方式，代表的字母却不一样。比如，130在法语编码中代表了é，在希伯来语编码中却代表了字母Gimel (ג)，在俄语编码中又会代表另一个符号。但是不管怎样，所有这些编码方式中，0—127表示的符号是一样的，不一样的只是128—255的这一段。<br>至于亚洲国家的文字，使用的符号就更多了，汉字就多达10万左右。一个字节只能表示256种符号，肯定是不够的，就必须使用多个字节表达一个符号。比如，简体中文常见的编码方式是GB2312，使用两个字节表示一个汉字，所以理论上最多可以表示256x256=65536个符号。<br>世界上存在着多种编码方式，同一个二进制数字可以被解释成不同的符号。因此，要想打开一个文本文件，就必须知道它的编码方式，否则用错误的编码方式解读，就会出现乱码。为什么电子邮件常常出现乱码？就是因为发信人和收信人使用的编码方式不一样。<br>可以想象，如果有一种编码，将世界上所有的符号都纳入其中。每一个符号都给予一个独一无二的编码，那么乱码问题就会消失。这就是Unicode，就像它的名字都表示的，这是一种所有符号的编码。<br>Unicode当然是一个很大的集合，现在的规模可以容纳100多万个符号。每个符号的编码都不一样。需要注意的是，Unicode只是一个符号集，它只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。</p>
-<h2 id="3-UTF-8"><a href="#3-UTF-8" class="headerlink" title="3. UTF-8"></a>3. UTF-8</h2><p>互联网的普及，强烈要求出现一种统一的编码方式。UTF-8就是在互联网上使用最广的一种unicode的实现方式。其他实现方式还包括UTF-16和UTF-32，不过在互联网上基本不用。重复一遍，这里的关系是，UTF-8是Unicode的实现方式之一。<br>UTF-8最大的一个特点，就是它是一种变长的编码方式。它可以使用1~6个字节表示一个符号，根据不同的符号而变化字节长度。<br>UTF-8的编码规则很简单，只有二条：<br>1）对于单字节的符号，字节的第一位设为0，后面7位为这个符号的unicode码。因此对于英语字母，UTF-8编码和ASCII码是相同的。<br>2）对于n字节的符号（n&gt;1），第一个字节的前n位都设为1，第n+1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的unicode码。<br>如表：<br>1字节 0xxxxxxx<br>2字节 110xxxxx 10xxxxxx<br>3字节 1110xxxx 10xxxxxx 10xxxxxx<br>4字节 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx<br>5字节 111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx<br>6字节 1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx<br>因此UTF-8中可以用来表示字符编码的实际位数最多有31位，即上表中x所表示的位。除去那些控制位（每字节开头的10等），这些x表示的位与UNICODE编码是一一对应的，位高低顺序也相同。<br>实际将UNICODE转换为UTF-8编码时应先去除高位0，然后根据所剩编码的位数决定所需最小的UTF-8编码位数。<br>因此那些基本ASCII字符集中的字符（UNICODE兼容ASCII）只需要一个字节的UTF-8编码（7个二进制位）便可以表示。<br>根据此规则，可以很方便的把UTF-8编码的字符串拆分成单字集合，代码如下：<br> 1   size_t utf8_to_charset(const std::string &amp;input, std::set<std::string> &amp;output) {<br> 2     std::string ch;<br> 3     for (size_t i = 0, len = 0; i != input.length(); i += len) {<br> 4       unsigned char byte = (unsigned)input[i];<br> 5       if (byte &gt;= 0xFC) // lenght 6<br> 6         len = 6;<br> 7       else if (byte &gt;= 0xF8)<br> 8         len = 5;<br> 9       else if (byte &gt;= 0xF0)<br>10         len = 4;<br>11       else if (byte &gt;= 0xE0)<br>12         len = 3;<br>13       else if (byte &gt;= 0xC0)<br>14         len = 2;<br>15       else<br>16         len = 1;<br>17       ch = input.substr(i, len);<br>18       output.insert(ch);<br>19     }<br>20     return output.size();<br>21   }<br>这里我把字符串转换为单字的集合（set）是因为应用场景的需要，如果需要保持单字在字符串中的位置，可以很方便的用vector来替换set。<br>下面是获取UTF-8字符串的字符个数（注意，不是字符串长度哦）的代码：<br> 1   size_t get_utf8_length(const std::string &amp;input) {<br> 2     size_t length = 0;<br> 3     for (size_t i = 0, len = 0; i != input.length(); i += len) {<br> 4       unsigned char byte = input[i];<br> 5       if (byte &gt;= 0xFC) // lenght 6<br> 6         len = 6;<br> 7       else if (byte &gt;= 0xF8)<br> 8         len = 5;<br> 9       else if (byte &gt;= 0xF0)<br>10         len = 4;<br>11       else if (byte &gt;= 0xE0)<br>12         len = 3;<br>13       else if (byte &gt;= 0xC0)<br>14         len = 2;<br>15       else<br>16         len = 1;<br>17       length ++;<br>18     }<br>19     return length;<br>20   }</std::string></p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/07/30/字符编码，utf-8怎么拆分每个字符/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/08/21/判断版本的新方法-NSProcessInfo/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          判断版本的新方法 NSProcessInfo
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/07/18/iOS-KVV/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS KVV</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -336,8 +214,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

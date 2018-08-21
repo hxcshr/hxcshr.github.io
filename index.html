@@ -214,6 +214,71 @@
 
 
   
+    <article id="post-判断版本的新方法-NSProcessInfo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/21/判断版本的新方法-NSProcessInfo/">判断版本的新方法 NSProcessInfo</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/21/判断版本的新方法-NSProcessInfo/" class="archive-article-date">
+  	<time datetime="2017-08-21T12:27:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>版本兼容的时候有的情况需要判断版本<br>一般都是用 [[UIDevice currentDevice] systemVersion];<br>iOS 8之后可以用下边的方法：</p>
+<p>swift：<br>let yosemite = NSOperatingSystemVersion(majorVersion: 10, minorVersion: 10, patchVersion: 0)<br>NSProcessInfo().isOperatingSystemAtLeastVersion(yosemite)</p>
+<p>Objective-C:<br>NSProcessInfo *info = [[NSProcessInfo alloc]init];<br>    NSOperatingSystemVersion version = [info operatingSystemVersion];<br>    NSOperatingSystemVersion v ;<br>    v.majorVersion = 11;<br>    v.minorVersion = 4;<br>    v.patchVersion = 0;<br>    if ([info isOperatingSystemAtLeastVersion:v]) {<br>        NSLog(@“&gt;=”);<br>    }else{<br>        NSLog(@“&lt;”);<br>    }</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/21/判断版本的新方法-NSProcessInfo/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-字符编码，utf-8怎么拆分每个字符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
