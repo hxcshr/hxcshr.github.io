@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/2 | hexuec</title>
+  <title>control不响应事件 | hexuec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hexuec">
-<meta property="og:url" content="http://yoursite.com/archives/2017/02/index.html">
+  <meta name="description" content="UIview 上添加UIControl，view上添加手势，control addtarget ,control 不会执行,但是button没有这个问题ps: 模拟器 iOS 12 上测试的代码如下：123456789101112131415161718192021222324252627282930override func viewDidLoad() &amp;#123;super.viewDidLo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="control不响应事件">
+<meta property="og:url" content="http://yoursite.com/2019/01/06/control不响应事件/index.html">
 <meta property="og:site_name" content="hexuec">
+<meta property="og:description" content="UIview 上添加UIControl，view上添加手势，control addtarget ,control 不会执行,但是button没有这个问题ps: 模拟器 iOS 12 上测试的代码如下：123456789101112131415161718192021222324252627282930override func viewDidLoad() &amp;#123;super.viewDidLo">
+<meta property="og:updated_time" content="2019-01-06T04:00:02.468Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexuec">
+<meta name="twitter:title" content="control不响应事件">
+<meta name="twitter:description" content="UIview 上添加UIControl，view上添加手势，control addtarget ,control 不会执行,但是button没有这个问题ps: 模拟器 iOS 12 上测试的代码如下：123456789101112131415161718192021222324252627282930override func viewDidLoad() &amp;#123;super.viewDidLo">
   
     <link rel="alternative" href="/atom.xml" title="hexuec" type="application/atom+xml">
   
@@ -149,49 +153,159 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-control不响应事件" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/28/hello-world/" class="archive-article-date">
-  	<time datetime="2017-02-28T08:48:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/28/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      control不响应事件
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/01/06/control不响应事件/" class="archive-article-date">
+  	<time datetime="2019-01-06T03:37:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>UIview 上添加UIControl，view上添加手势，control addtarget ,control 不会执行,但是button没有这个问题<br>ps: 模拟器 iOS 12 上测试的<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">override func viewDidLoad() &#123;</div><div class="line">super.viewDidLoad()</div><div class="line">// Do any additional setup after loading the view, typically from a nib.</div><div class="line"></div><div class="line">let tap = UITapGestureRecognizer(target: self, action: #selector(click(tap:)))</div><div class="line">self.view.addGestureRecognizer(tap)</div><div class="line"></div><div class="line">let control = UIControl(frame: CGRect(x: 10, y: 100, width: 100, height: 100))</div><div class="line">control.backgroundColor = UIColor.gray</div><div class="line">self.view.addSubview(control)</div><div class="line">control.addTarget(self, action: #selector(controlClick(control:)), for: .touchUpInside)</div><div class="line"></div><div class="line">let btn = UIButton(frame: CGRect(x: 10, y: 220, width: 100, height: 100))</div><div class="line">btn.setTitle(&quot;我是button&quot;, for: .normal)</div><div class="line">btn.backgroundColor = UIColor.cyan</div><div class="line">btn.addTarget(self, action: #selector(btnClick(btn:)), for: .touchUpInside)</div><div class="line">self.view.addSubview(btn)</div><div class="line">&#125;</div><div class="line"></div><div class="line">@objc func click(tap: UIGestureRecognizer) &#123;</div><div class="line">print(&quot;tap click&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">@objc func controlClick(control :UIControl) &#123;</div><div class="line">print(&quot;control click&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">@objc func btnClick(btn: UIButton) &#123;</div><div class="line">print(&quot;btn click&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h4><p>点击button 打印btn click<br>点击control 打印tap click<br>点击self.view 打印tap click</p>
+<p>添加tap.cancelsTouchesInView = false 之后，control和手势都会执行，stackoverflow有人提问，但是没有人回答。猜测苹果对UIbutton做了不同的处理</p>
+<p><a href="https://juejin.im/entry/59a7b6e4f265da246f381d37" target="_blank" rel="external">https://juejin.im/entry/59a7b6e4f265da246f381d37</a></p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/06/control不响应事件/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/06/25/Pch预编译/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pch预编译</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -214,8 +328,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
